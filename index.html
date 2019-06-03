@@ -5,34 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Semáforo</title>
-    <style>
-
-        .caja-semaforo {
-            padding: 10px;
-            border: 1px solid black;
-            border-radius: 20px;
-            width: 80px;
-            margin: 0 auto;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            background-color: rgb(50, 50, 50);
-        }
-
-        .luz-semaforo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: grey;
-            Border: 2px solid black;
-            margin: 0 auto;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        .centrar {
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href=".\CSS\Estilos.css">
     
 </head>
 <body>
@@ -50,70 +23,16 @@
 
         </div>
     </div>
+    
     <div class= "centrar">
-    <button onclick="onClickBotonCambiar()" id="Cambiar" >CAMBIAR</button>
+            <button onclick="onCLickBotonAuto()" id="boton-auto"></button>
     </div>
-    <script>
 
-            // var rojo = true;
-            // var yellow = true;
-            // var green = true;
+    <div class= "centrar" id="boton-cambiar">
+            <button onclick="onClickBotonCambiar()">CAMBIAR</button>
+    </div>
 
-
-            function cambiarColorLuzSemaforo(id, prender)
-            {
-                var color = 'grey';
-                if(prender == true) color = id;
-                document.querySelector('#'+id).style.backgroundColor = color; 
-            }
-            setInterval(onClickBotonCambiar, 2000);
-            var estado = 0;
-
-
-            function onClickBotonCambiar ()
-            {
-
-                switch(estado)
-                {
-                    case 0:
-                        red = true;
-                        yellow = !true;
-                        green = !true;
-                        break;
-                    case 1:
-                        red = !true;
-                        yellow = true;
-                        green = !true;
-
-                        break;
-                    case 2:
-                        red = !true;
-                        yellow = !true;
-                        green = true;
-                        break;
-                    case 3:
-                        red = !true;
-                        yellow = true;
-                        green = !true;
-                        break;
-                    default:
-                    break;
-                }
-                estado++;
-                if(estado>3) estado = 0;
-
-                cambiarColorLuzSemaforo('red', red);
-
-                cambiarColorLuzSemaforo('yellow', yellow);
-
-                cambiarColorLuzSemaforo('green', green);
-            }
-        // cambiarColorLuzSemaforo('red', red);
-
-        // cambiarColorLuzSemaforo('yellow', yellow);
-
-        // cambiarColorLuzSemaforo('green', green);
-    </script>
+    <script src=".\JS\BotonesDelOrto.js"> </script>
 
     
   
