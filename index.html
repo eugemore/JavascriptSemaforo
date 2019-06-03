@@ -66,7 +66,9 @@
                 if(prender == true) color = id;
                 document.querySelector('#'+id).style.backgroundColor = color; 
             }
+            setInterval(onClickBotonCambiar, 2000);
             var estado = 0;
+
 
             function onClickBotonCambiar ()
             {
@@ -98,7 +100,7 @@
                     break;
                 }
                 estado++;
-                if(estado>3) estado = 1;
+                if(estado>3) estado = 0;
 
                 cambiarColorLuzSemaforo('red', red);
 
